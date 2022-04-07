@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Header() {
-  return <div className="header">Todo App</div>;
+  return (
+    <a href="#">
+      <div className="header">Todo | App</div>
+    </a>
+  );
 }

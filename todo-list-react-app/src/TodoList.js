@@ -1,15 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import AddTodo from "./AddTodo";
-import Item from "./Item";
 import List from "./List";
 
 export default function TodoList() {
-  const todos = ["shopping", "clean", "wash car"];
+  const [todos, setTodos] = useState([]);
+
   return (
     <div className="todo-list">
-      <AddTodo />
-      <Item />
-      <List todos={todos} />
+      <AddTodo setTodos={setTodos} />
+      <List todos={todos} setTodos={setTodos} />
     </div>
   );
 }
