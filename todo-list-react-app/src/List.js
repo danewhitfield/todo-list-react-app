@@ -2,10 +2,11 @@ import React from "react";
 import { BsFillTrashFill } from "react-icons/bs";
 
 export default function List({ todos, setTodos }) {
-  const handleDelete = (e) => {
-    e.preventDefault();
-    console.log("e:", e);
-    setTodos("");
+  const handleDelete = (todoCheck) => {
+    setTodos((currState) => {
+      const newState = [...currState];
+      return newState.filter((todo) => todo !== todoCheck);
+    });
   };
 
   if (todos.length !== 0) {
@@ -19,7 +20,10 @@ export default function List({ todos, setTodos }) {
                 <div className="todo-card">
                   <li className="todo" key={todo}>
                     {todo}
-                    <button className="delete-btn" onClick={handleDelete}>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(todo)}
+                    >
                       <span className="trash-icon">
                         <BsFillTrashFill />
                       </span>

@@ -27,9 +27,7 @@ export default function AddTodo({ setTodos }) {
             required
           />
           <button className="submit-btn">
-            <span className="add-icon">
-              <BsFillPlusSquareFill />
-            </span>
+            <BsFillPlusSquareFill />
           </button>
         </div>
       </form>
